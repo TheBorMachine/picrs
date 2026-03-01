@@ -1,0 +1,19 @@
+syntax = "proto3";
+package image;
+
+service ImageProcessor {
+  rpc ProcessImage (ProcessRequest) returns (ProcessResponse);
+}
+
+message ProcessRequest {
+  bytes image_data = 1;
+  string format = 2;
+  uint32 quality = 3;
+  repeated uint32 widths = 4;
+  repeated uint32 heights = 5;
+}
+
+message ProcessResponse {
+  string original_path = 1;
+  repeated string processed_paths = 2;
+}

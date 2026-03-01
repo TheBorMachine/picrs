@@ -1,0 +1,23 @@
+[package]
+name = "picrs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-trait = "0.1.89"
+image = "0.25.9"
+prost = "0.14.3"
+prost-types = "0.14.3"
+thiserror = "2.0.18"
+tokio = { version = "1.49.0", features = [
+    "rt-multi-thread",
+    "macros",
+    "fs",
+    "sync",
+] }
+tonic = "0.14.5"
+tonic-prost = "0.14.5"
+
+[build-dependencies]
+tonic-prost-build = "0.14.5"
+
